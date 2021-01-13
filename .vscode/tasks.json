@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Echo Environment Variables",
+      "type": "shell",
+      "linux": {
+        "command": "echo",
+        "args": ["${workspaceFolder}"]
+      },
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Kill Process on Port 3000",
+      "type": "shell",
+      "linux": {
+        "command": "npx kill-port 3000",
+        "args": []
+      },
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Run Debug Build",
+      "type": "shell",
+      "linux": {
+        "command": "npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
+        "args": []
+      },
+      "problemMatcher": "$node-sass",
+      "group": "build"
+    },
+    {
+      "label": "Run Production Build",
+      "type": "shell",
+      "linux": {
+        "command": "npx webpack-cli --mode=production --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
+        "args": []
+      },
+      "problemMatcher": "$node-sass",
+      "group": "build"
+    },
+    {
+      "label": "Run debug server",
+      "type": "shell",
+      "linux": {
+        "command": "npx webpack-cli serve --hot --color --watch --stats normal",
+        "args": []
+      },
+      "problemMatcher": "$node-sass",
+      "group": "build"
+    },
+    {
+      "label": "Update All NPM Packages",
+      "type": "shell",
+      "linux": {
+        "command": "${workspaceFolder}/automation/updatePackages",
+        "args": []
+      },
+      "problemMatcher": "$go",
+      "group": "build"
+    }
+  ]
+}

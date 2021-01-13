@@ -1,0 +1,47 @@
+{
+  "editor.renderWhitespace": "all",
+  "editor.insertSpaces": true,
+  "editor.parameterHints.enabled": true,
+  "editor.codeLens": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "files.insertFinalNewline": true,
+  "liveServer.settings.port": 3002,
+  "debug.javascript.usePreview": false,
+  "liveServer.settings.useBrowserPreview": true,
+  // The number of spaces a tab is equal to.
+  "editor.tabSize": 4,
+  // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
+  "editor.detectIndentation": true,
+  "editor.tokenColorCustomizations": {
+    "comments": "#5e5e5e"
+  },
+  "window.zoomLevel": 0.5,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.suggest.insertMode": "replace",
+    "editor.mouseWheelZoom": true,
+    "gitlens.codeLens.scopes": ["document"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
