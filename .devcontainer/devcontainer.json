@@ -16,7 +16,7 @@
   "postCreateCommand": [
     "/bin/bash",
     "-c",
-    "/workspaces/JavaScript/React-Diagrams/.devcontainer/Tools/PostStartScripts/CodeInContainerStartScripts.sh"
+    "/workspaces/React-Diagrams-DevSetup/.devcontainer/Tools/PostStartScripts/CodeInContainerStartScripts.sh"
   ],
   "extensions": [
     "pranaygp.vscode-css-peek",
