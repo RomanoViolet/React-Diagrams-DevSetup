@@ -35,6 +35,13 @@ module.exports = {
         use: ['babel-loader']
       },
       {
+        test: /\.ts?$/,
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true
+        }
+      },
+      {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         options: {

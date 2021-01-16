@@ -22,7 +22,17 @@
       "group": "build"
     },
     {
-      "label": "Run Debug Build",
+      "label": "Run Debug Build: Watch",
+      "type": "shell",
+      "linux": {
+        "command": "npx tsc --watch --traceResolution && npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
+        "args": []
+      },
+      "problemMatcher": "$node-sass",
+      "group": "build"
+    },
+    {
+      "label": "Run Debug Build: Nowatch",
       "type": "shell",
       "linux": {
         "command": "npx tsc --traceResolution && npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",

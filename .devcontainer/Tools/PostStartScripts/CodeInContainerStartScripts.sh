@@ -40,13 +40,16 @@ source ~/.bashrc
 
 # Install NPM packages
 echo
-echo "------------ NPM -------------"
+echo "------------ Installing Application Dependencies -------------"
 echo
 cd ${HomeDirectory}
 npm install --save-dev typescript --peer
 types-installer install
+npm i --save-dev @types/babel__core
+npm i --save-dev @types/babel__template
+npm i --save-dev @types/terser-webpack-plugin
 echo
-echo "------- NPM Finished ---------"
+echo "------- Finished Installing Dependencies ---------"
 
 echo
 echo 
