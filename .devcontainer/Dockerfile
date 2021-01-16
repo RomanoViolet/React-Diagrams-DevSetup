@@ -61,6 +61,7 @@ RUN \
   webpack-cli \
   webpack \
   typescript \
+  types-installer \
   prettier && \
   apt-get purge -y --auto-remove build-essential && \
   apt-get purge -y --auto-remove software-properties-common && \
