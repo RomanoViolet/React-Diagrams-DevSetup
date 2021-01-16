@@ -43,7 +43,8 @@ echo
 echo "------------ NPM -------------"
 echo
 cd ${HomeDirectory}
-npm install --peer
+npm install --save-dev typescript --peer
+types-installer install
 echo
 echo "------- NPM Finished ---------"
 

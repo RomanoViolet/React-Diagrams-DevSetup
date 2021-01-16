@@ -23,7 +23,7 @@
   "editor.tokenColorCustomizations": {
     "comments": "#5e5e5e"
   },
-  "window.zoomLevel": 0.5,
+  "window.zoomLevel": 1,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.formatOnSave": true,
