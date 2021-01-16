@@ -1,13 +1,21 @@
 {
-	"compileOnSave": false,
-	"compilerOptions": {
-		"declaration": false,
-		"jsx": "react",
-		"allowJs": true,
-		"target": "es6",
-		"moduleResolution": "node"
-	},
-	"include": [
-		"./src"
-	]
+  "compileOnSave": false,
+  "compilerOptions": {
+    "declaration": false,
+    "jsx": "react",
+    "allowJs": true,
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "outDir": "dist",
+    "typeRoots": ["./node_modules/@types", "./typings"]
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules", ".npm"]
 }

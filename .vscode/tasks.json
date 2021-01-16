@@ -25,7 +25,7 @@
       "label": "Run Debug Build",
       "type": "shell",
       "linux": {
-        "command": "npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
+        "command": "npx tsc --traceResolution && npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
         "args": []
       },
       "problemMatcher": "$node-sass",
