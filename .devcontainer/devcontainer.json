@@ -42,6 +42,7 @@
     "esbenp.prettier-vscode",
     "Angular.ng-template",
     "ms-vscode.vscode-typescript-tslint-plugin",
-    "denoland.vscode-deno"
+    "denoland.vscode-deno",
+    "mhutchie.git-graph"
   ]
 }

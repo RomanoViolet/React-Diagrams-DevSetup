@@ -37,3 +37,7 @@ Included in the development environment are:
 5. Preconfigured [debug settings](./.vscode/launch.json) which requires [firefox browser](https://www.mozilla.org/en-US/firefox/new/) available on the host machine.
 
 The user can change the development configuration to switch from Firefox browser to Chrome.
+
+## Fixing Typescript Compile Errors
+
+If typescript fails to compile, please add the fix as suggested in this ![screenshot](./2021-01-19_22-18.png)
