@@ -9,11 +9,11 @@ export class TSCustomNodeFactory extends AbstractReactFactory<TSCustomNodeModel,
 		super('ts-custom-node');
 	}
 
-	generateModel(initialConfig) {
+	generateModel(initialConfig: any) {
 		return new TSCustomNodeModel();
 	}
 
-	generateReactWidget(event): JSX.Element {
+	generateReactWidget(event: any): JSX.Element {
 		return <TSCustomNodeWidget engine={this.engine as DiagramEngine} node={event.model} />;
 	}
 }

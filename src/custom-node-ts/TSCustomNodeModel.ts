@@ -22,7 +22,7 @@ export class TSCustomNodeModel extends NodeModel {
       type: 'ts-custom-node'
     });
     this.color = options.color || 'red';
-    this.width = options.width;
+    this.width = options.width || 100;
 
     // setup an in and out port
     this.addPort(
