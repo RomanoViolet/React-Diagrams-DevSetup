@@ -21,6 +21,7 @@
 	},
 	"devDependencies": {
 		"@babel/preset-react": "^7.10.4",
+		"@emotion/eslint-plugin": "^11.0.0",
 		"@projectstorm/react-diagrams": "^6.3.0",
 		"@tsconfig/recommended": "^1.0.1",
 		"@types/babel__core": "^7.1.12",

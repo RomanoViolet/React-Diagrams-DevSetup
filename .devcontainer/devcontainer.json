@@ -43,6 +43,7 @@
     "Angular.ng-template",
     "ms-vscode.vscode-typescript-tslint-plugin",
     "denoland.vscode-deno",
-    "mhutchie.git-graph"
+    "mhutchie.git-graph",
+    "codestream.codestream"
   ]
 }

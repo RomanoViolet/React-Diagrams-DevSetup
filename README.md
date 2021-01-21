@@ -40,4 +40,7 @@ The user can change the development configuration to switch from Firefox browser
 
 ## Fixing Typescript Compile Errors
 
-If typescript fails to compile, please add the fix as suggested in this ![screenshot](./2021-01-19_22-18.png)
+If typescript fails to compile, please add the fix as suggested in the following screenshots:
+
+![screenshot](./2021-01-19_22-18.png)
+![screenshot](./2021-01-21_20-50.png)
