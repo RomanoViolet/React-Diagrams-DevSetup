@@ -25,7 +25,7 @@
       "label": "Run Debug Build: Watch",
       "type": "shell",
       "linux": {
-        "command": "npx tsc --watch --traceResolution && npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
+        "command": "npx tsc --watch --traceResolution && npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal -open",
         "args": []
       },
       "problemMatcher": "$node-sass",
@@ -35,7 +35,7 @@
       "label": "Run Debug Build: Nowatch",
       "type": "shell",
       "linux": {
-        "command": "npx tsc --traceResolution && npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
+        "command": "npx tsc --traceResolution && npx webpack-cli --mode=development --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal -open",
         "args": []
       },
       "problemMatcher": "$node-sass",
@@ -45,7 +45,7 @@
       "label": "Run Production Build",
       "type": "shell",
       "linux": {
-        "command": "npx webpack-cli --mode=production --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
+        "command": "npx tsc --traceResolution && npx webpack-cli --mode=production --config ${workspaceFolder}/webpack.config.js --progress 'profile' --color --stats normal",
         "args": []
       },
       "problemMatcher": "$node-sass",
@@ -55,7 +55,7 @@
       "label": "Run debug server",
       "type": "shell",
       "linux": {
-        "command": "npx webpack-cli serve --hot --color --watch --stats normal",
+        "command": "npx tsc --traceResolution && npx webpack-cli serve --mode=production --config ${workspaceFolder}/webpack.config.js --hot --color --watch --progress 'profile' --stats normal -open",
         "args": []
       },
       "problemMatcher": "$node-sass",
