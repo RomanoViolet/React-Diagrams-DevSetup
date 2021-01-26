@@ -31,10 +31,10 @@ link1.setTargetPort(node2.getPort('in'));
 
 // Custom Node
 const node3 = new DefaultNodeModel("Node 3", "rgb(0,192,255)");
-let port3 = node3.addOutPort("Out");
+const port3 = node3.addOutPort("Out");
 node3.setPosition(100, 100);
-var node4 = new DefaultNodeModel("Node 4", "rgb(192,255,0)");
-let port4 = node4.addInPort("In");
+const node4 = new DefaultNodeModel("Node 4", "rgb(192,255,0)");
+const port4 = node4.addInPort("In");
 node4.setPosition(400, 100);
 const link3 = port3.link(port4);
 
