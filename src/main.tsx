@@ -15,7 +15,7 @@ engine.getNodeFactories().registerFactory(new TSCustomNodeFactory());
 // create a diagram model
 const model = new DiagramModel();
 
-//####################################################
+// ####################################################
 // now create two nodes of each type, and connect them
 
 const node1 = new TSCustomNodeModel({ color: 'rgb(0,255,0)', width: 240 });
@@ -31,16 +31,16 @@ link1.setTargetPort(node2.getPort('in'));
 
 // Custom Node
 const node3 = new DefaultNodeModel("Node 3", "rgb(0,192,255)");
-let port3 = node3.addOutPort("Out");
+const port3 = node3.addOutPort("Out");
 node3.setPosition(100, 100);
-var node4 = new DefaultNodeModel("Node 4", "rgb(192,255,0)");
-let port4 = node4.addInPort("In");
+const node4 = new DefaultNodeModel("Node 4", "rgb(192,255,0)");
+const port4 = node4.addInPort("In");
 node4.setPosition(400, 100);
 const link3 = port3.link(port4);
 
 model.addAll(node1, node2, node3, node4, link1, link3);
 
-//####################################################
+// ####################################################
 
 // install the model into the engine
 engine.setModel(model);
