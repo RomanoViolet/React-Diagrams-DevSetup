@@ -1,0 +1,15 @@
+{
+    "segments": [
+        "git",
+        "set_term_title",
+        "cwd"
+    ],
+    "hostname": {"colorize":"true"},
+    "cwd": {
+        "mode": "plain",
+        "max_depth": 4,
+        "full_cwd": "true",
+        "max_dir_size": -1
+    },
+    "mode":"patched" 
+}

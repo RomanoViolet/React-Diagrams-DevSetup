@@ -1,48 +1,113 @@
 {
-  "name": "ReactDiagrams",
-  "dockerFile": "Dockerfile",
-  "runArgs": [
-    "-u",
-    "dockeruser",
-    "--cap-add=SYS_PTRACE",
-    "--security-opt",
-    "seccomp=unconfined",
-    "--network=host"
-  ],
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "appPort": [3000],
-  "postCreateCommand": [
-    "/bin/bash",
-    "-c",
-    "/workspaces/React-Diagrams-DevSetup/.devcontainer/Tools/PostStartScripts/CodeInContainerStartScripts.sh"
-  ],
-  "extensions": [
-    "pranaygp.vscode-css-peek",
-    "formulahendry.auto-close-tag",
-    "humao.rest-client",
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "christian-kohler.path-intellisense",
-    "ritwickdey.LiveServer",
-    "firefox-devtools.vscode-firefox-debug",
-    "msjsdiag.debugger-for-chrome",
-    "CoenraadS.bracket-pair-colorizer",
-    "formulahendry.auto-rename-tag",
-    "WallabyJs.quokka-vscode",
-    "vincaslt.highlight-matching-tag",
-    "byi8220.indented-block-highlighting",
-    "nabeelvalley.easyzoom",
-    "ms-vscode.vscode-typescript-next",
-    "eg2.vscode-npm-script",
-    "eamodio.gitlens",
-    "donjayamanne.githistory",
-    "gruntfuggly.todo-tree",
-    "esbenp.prettier-vscode",
-    "Angular.ng-template",
-    "ms-vscode.vscode-typescript-tslint-plugin",
-    "denoland.vscode-deno",
-    "mhutchie.git-graph"
-  ]
+	"name": "React-2026-05-01",
+	"dockerFile": "Dockerfile",
+	"runArgs": [
+		"-u",
+		"ubuntu",
+		"--privileged",
+		"--cap-add=NET_ADMIN",
+		"--cap-add=SYS_ADMIN",
+		"--cap-add=SYS_NICE",
+		"--network=host"
+	],
+	"initializeCommand": [],
+	"containerUser": "ubuntu",
+	"containerEnv": {
+		"HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+		"HTTPS_PROXY": "${localEnv:HTTPS_PROXY}",
+		"NO_PROXY": "${localEnv:NO_PROXY}",
+		"http_proxy": "${localEnv:http_proxy}",
+		"https_proxy": "${localEnv:https_proxy}",
+		"no_proxy": "${localEnv:no_proxy}"
+	},
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash",
+				"http.proxyStrictSSL": false,
+				"python.pythonPath": "/home/ubuntu/venv/bin/python"
+			},
+			"extensions": [
+                "ankalus.git-tools",
+                "arturock.gitstash",
+                "bbenoist.Doxygen",
+                "bibhasdn.git-easy",
+                "bokuweb.vscode-git-grep",
+                "byi8220.indented-block-highlighting",
+                "christian-kohler.path-intellisense",
+                "CoenraadS.bracket-pair-colorizer",
+                "donjayamanne.githistory",
+                "eamodio.gitlens",
+                "Gruntfuggly.todo-tree",
+                "howardzuo.vscode-git-tags",
+                "huizhou.githd",
+                "ivangabriele.vscode-git-add-and-commit",
+                "ajshort.include-autocomplete",
+                "kevinkyang.auto-comment-blocks",
+                "letmaik.git-tree-compare",
+                "maddouri.cmake-tools-helper",
+                "manuth.markdown-converter",
+                "matsken.git-stash-viewer",
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-vscode-remote.remote-containers",
+                "NabeelValley.easyzoom",
+                "paragdiwan.gitpatch",
+                "samschneller.git-add-remote",
+                "shaharkazaz.git-merger",
+                "waderyan.gitblame",
+                "wengerk.highlight-bad-chars",
+                "cschlosser.doxdocgen",
+                "ionutvmi.path-autocomplete",
+                "jithurjacob.nbpreviewer",
+                "codezombiech.gitignore",
+                "mohsen1.prettify-json",
+                "grapecity.gc-excelviewer",
+                "ms-python.flake8",
+                "njpwerner.autodocstring",
+                "ms-python.black-formatter",
+                "ms-python.autopep8",
+                "dcasella.monokai-plusplus",
+                "GitHub.copilot",
+                "GitHub.copilot-chat",
+                "mechatroner.rainbow-csv",
+                "pranaygp.vscode-css-peek",
+                "formulahendry.auto-close-tag",
+                "humao.rest-client",
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "ritwickdey.LiveServer",
+                "firefox-devtools.vscode-firefox-debug",
+                "msjsdiag.debugger-for-chrome",
+                "formulahendry.auto-rename-tag",
+                "WallabyJs.quokka-vscode",
+                "vincaslt.highlight-matching-tag",
+                "ms-vscode.vscode-typescript-next",
+                "eg2.vscode-npm-script",
+                "Angular.ng-template",
+                "ms-vscode.vscode-typescript-tslint-plugin",
+                "denoland.vscode-deno",
+                "mhutchie.git-graph"
+]
+		}
+	},
+	"remoteEnv": {
+		"KEYRING_BACKEND_DIR": "/host/.ssh/keyring_data"
+	},
+	"mounts": [
+		"type=bind,source=${localEnv:HOME}/.gitconfig,target=/host/.gitconfig",
+		"type=bind,source=${localEnv:HOME}/.ssh,target=/host/.ssh",
+		"type=volume,source=sw_arch_command_history,target=/command_history"
+	],
+	"postStartCommand": [
+		"/bin/bash",
+		".devcontainer/Tools/PostStartScripts/PostStart.sh",
+		"${localEnv:HOME}"
+	],
+	"postCreateCommand": [
+		"/bin/bash",
+		"-c",
+		".devcontainer/Tools/PostStartScripts/CodeInContainerStartScripts.sh",
+		"${localEnv:HOME}"
+	]
 }

@@ -1,6 +1,20 @@
 #!/usr/bin/env bash
+BASH_XTRACEFD="4"
+PS4='$LINENO: '
+set -x 
 
-HomeDirectory=`pwd`
+VENV_PATH=/home/ubuntu/venv
+python3 -m venv $VENV_PATH
+PATH="$VENV_PATH/bin:$PATH"
+
+export PATH="$VENV_PATH/bin:$PATH"
+pip install --upgrade pip && pip install --verbose -r /home/ubuntu/requirements-py3.txt && \
+rm -f /home/ubuntu/requirements-py3.txt
+
+
+# Optional: Make the virtual environment the default for all shells
+echo "source $VENV_PATH/bin/activate" >> /home/ubuntu/.bashrc
+
 
 # Enable Git Credentials Helper
 git config --global credential.helper "cache --timeout=36000"
@@ -31,28 +45,10 @@ export COLOR_WHITE='\e[1;37m'
 
 
 # From http://bashrcgenerator.com
-echo export PS1=\""\[\033[38;5;16m\]\[\033[48;5;230m\]\u\[$(tput sgr0)\]@\w>\[$(tput sgr0)\]"\" >> ~/.bashrc
+echo "PS1='${COLOR_BLUE}\w> ${COLOR_GRAY} \[$(tput sgr0)\]'" >> ~/.bashrc
 
-# Export ng binary alias. Angular CLI is expected to be installed via NPM package manager lateron
-# echo "alias ng='/workspaces/sw-architects-tools/node_modules/\@angular/cli/bin/ng'" >> ~/.bashrc
+# Generate default pylint configuration file
+pylint --generate-rcfile > /workspaces/PythonSetup/.pylintrc
 
-source ~/.bashrc
-
-# Install NPM packages
-echo
-echo "------------ Installing Application Dependencies -------------"
-echo
-cd ${HomeDirectory}
-npm install --save-dev typescript --peer
-types-installer install
-npm i --save-dev @types/babel__core
-npm i --save-dev @types/babel__template
-npm i --save-dev @types/terser-webpack-plugin
-echo
-echo "------- Finished Installing Dependencies ---------"
-
-echo
-echo 
-echo "-------- Finished Setup. --------"
-echo
-echo
+# Switch off the debug mode
+set +x 

@@ -2,28 +2,16 @@
   name =
   email =
 
-[alias]
-  a = add
-  b = branch
-  c = commit
-  co = checkout
-  d = diff
-  e = add --edit
-  f = fetch
-  g = grep
-  h = help
-  i = init
-  l = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  ll = log --stat
-  m = merge
-  r = remote
-  s = status --branch --short
-  t = tag
-  w = whatchanged
-
 [core]
   excludesfile = ~/.gitignore
-  editor = code
+  editor = code --wait
+  autocrlf = false
+
+[filter "lfs"]
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge --skip %f
+        required = true
+        process = git-lfs filter-process --skip
 
 [color]
   ui = always
